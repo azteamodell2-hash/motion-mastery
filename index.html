@@ -37,6 +37,11 @@
       color: #f2f2f2;
       text-align: center;
     }
+/* NAV OFFSET FIX */
+section, div[id] {
+  scroll-margin-top: 90px;
+}
+
 
     /* HERO */
     header {
@@ -203,10 +208,113 @@
       border-top: 3px solid #b30000;
       font-size: 14px;
     }
+    /* TOP NAV */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(179, 0, 0, 0.6);
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .top-nav a {
+      color: #d0d0d0;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      padding: 6px 2px;
+      transition: color 0.25s ease;
+    }
+
+    .top-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: #b30000;
+      transition: width 0.25s ease;
+    }
+
+    .top-nav a:hover {
+      color: #ffffff;
+    }
+
+    .top-nav a:hover::after {
+      width: 100%;
+    }
+
+/* Fix section scroll position on mobile */
+@media screen and (max-width: 768px) {
+  section {
+    scroll-margin-top: 70px; /* adjust for mobile nav height */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #0b0b0b; /* matches header */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .top-nav {
+    padding: 8px 0; /* shrink nav vertically */
+  }
+
+  .top-nav a {
+    font-size: 12px; /* smaller font for buttons */
+    padding: 6px 8px; /* less spacing around each button */
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+@media screen and (max-width: 480px) {
+  /* Make top nav wrap if buttons don't fit */
+  .top-nav {
+    display: flex;
+    flex-wrap: wrap;  /* allows buttons to go to next line */
+    justify-content: center;  /* center align */
+    padding: 8px 0;
+    background-color: #0b0b0b; /* ensures nav is visible */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .top-nav a {
+    font-size: 12px;       /* smaller text for mobile */
+    padding: 6px 10px;     /* smaller padding */
+    margin: 2px;            /* small spacing between buttons */
+  }
+}
+
+
   </style>
 </head>
 
 <body>
+
+<nav class="top-nav">
+  <a href="#philosophy">Philosophy</a>
+  <a href="#homeschool">Homeschool</a>
+  <a href="#pricing">Training</a>
+  <a href="#clinics">Clinics</a>
+</nav>
+
 
 <header>
   <img src="badge.png" alt="Motion Mastery Soccer Academy Badge" class="badge">
@@ -221,7 +329,8 @@
   </p>
 
   <!-- PHILOSOPHY -->
-  <div class="philosophy">
+  <div class="philosophy" id="philosophy">
+
     <h2>Our Philosophy</h2>
 
     <p>
@@ -256,8 +365,24 @@
     </p>
   </div>
 
+<!-- HOMESCHOOL -->
+<div class="philosophy" id="homeschool">
+  <h2>Homeschool-Friendly Training</h2>
+
+  <p>
+  Motion Mastery Academy provides itemized receipts for training sessions upon request.
+  Families may submit receipts directly to their ESA or scholarship program for potential reimbursement.
+</p>
+
+<p>
+  Reimbursement is handled by the family and their ESA or scholarship provider.
+</p>
+
+</div>
+
+
 <!-- MINIMALIST PRICING SECTION – FINAL -->
-<div class="pricing-section">
+<div class="pricing-section" id="pricing">
   <h2>Training Programs</h2>
 
   <div class="pricing-grid">
@@ -296,7 +421,8 @@
   </div>
 
   <!-- CLINIC -->
-  <div class="clinic">
+  <div class="clinic" id="clinics">
+
     <h2>Upcoming Clinics</h2>
     <div class="clinic-card">
       <h3>Gilbert Clinic</h3>
