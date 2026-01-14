@@ -325,6 +325,58 @@ html {
   }
 }
 
+/* APP INSTALL BAR */
+#appBar {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #0b0b0b, #1f0000);
+  border-top: 2px solid #b30000;
+  padding: 12px 10px;
+  z-index: 999;
+}
+
+.app-bar-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.app-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+}
+
+.app-text {
+  text-align: left;
+  flex: 1;
+  font-size: 14px;
+}
+
+.app-text span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.app-install-btn {
+  background: #b30000;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.app-install-btn:hover {
+  background: black;
+  color: #ff2a2a;
+}
 
   </style>
 </head>
@@ -350,11 +402,6 @@ html {
     Personalized training designed to accelerate results, sharpen technique,
     and translate skills directly into game performance.
   </p>
-<div style="margin-top:40px;">
-  <button id="installBtn" class="btn" style="cursor:pointer;">
-    Download the App
-  </button>
-</div>
 
   <!-- PHILOSOPHY -->
   <div class="philosophy" id="philosophy">
@@ -488,36 +535,45 @@ html {
 
 <footer>
   <p>&copy; 2025 Motion Mastery Soccer Academy</p>
+<!-- APP INSTALL BAR -->
+<div id="appBar">
+  <div class="app-bar-content">
+    <img src="badge.png" alt="App Icon" class="app-icon">
+    <div class="app-text">
+      <strong>Motion Mastery App</strong>
+      <span>Train faster. Access anytime.</span>
+    </div>
+    <button id="installBtn" class="app-install-btn">
+      Get App
+    </button>
+  </div>
+</div>
+
 </footer>
 
-  <script>
-  let deferredPrompt;
+ <script>
+let deferredPrompt;
+const installBtn = document.getElementById("installBtn");
 
-  window.addEventListener("beforeinstallprompt", (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+});
 
-    const installBtn = document.getElementById("installBtn");
-    if (installBtn) {
-      installBtn.style.display = "inline-block";
-    }
-  });
-
-  document.getElementById("installBtn")?.addEventListener("click", async () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      await deferredPrompt.userChoice;
-      deferredPrompt = null;
-    } else {
-      alert(
-        "On iPhone:\nTap the Share button (square with arrow) and select 'Add to Home Screen'."
-      );
-    }
-  });
-
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("service-worker.js");
+installBtn.addEventListener("click", async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt = null;
+  } else {
+    alert(
+      "To install on iPhone:\n\n1. Tap the Share icon\n2. Select 'Add to Home Screen'"
+    );
   }
+});
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
 </script>
 
 
