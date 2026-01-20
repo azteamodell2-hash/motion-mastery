@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Testimonials | Motion Mastery Soccer Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="badge.png">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #0b0b0b 0%, #1f0000 100%);
+      color: #f2f2f2;
+      text-align: center;
+    }
+
+   /* =================== TOP NAV (GLOBAL STANDARD) =================== */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(179, 0, 0, 0.6);
+}
+
+.top-nav a {
+  color: #d0d0d0;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 6px 2px;
+  transition: color 0.25s ease;
+}
+
+.top-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #b30000;
+  transition: width 0.25s ease;
+}
+
+.top-nav a:hover {
+  color: #ffffff;
+}
+
+.top-nav a:hover::after {
+  width: 100%;
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+  .top-nav {
+    flex-wrap: wrap;
+    padding: 8px 0;
+  }
+
+  .top-nav a {
+    font-size: 12px;
+    padding: 6px 10px;
+    margin: 2px;
+  }
+}
+
+
+    header {
+      padding: 60px 20px 40px;
+      border-bottom: 2px solid #b30000;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+    }
+
+    header p {
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    .testimonial-card {
+      background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
+      border: 2px solid #b30000;
+      border-radius: 14px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 20px rgba(179,0,0,0.45);
+      text-align: left;
+    }
+
+    .stars {
+      color: #ff2a2a;
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .testimonial-card span {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #ff2a2a;
+    }
+
+    .cta {
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 2px solid #b30000;
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 16px 36px;
+      background: #b30000;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+      border: 2px solid black;
+    }
+
+    .btn:hover {
+      background: black;
+      color: #ff2a2a;
+      border-color: #b30000;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: black;
+      padding: 20px;
+      border-top: 2px solid #b30000;
+      font-size: 14px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="top-nav">
+  <a href="index.html">Home</a>
+  <a href="training.html">Training</a>
+  <a href="testimonials.html">Testimonials</a>
+</nav>
+
+<header>
+  <h1>What Parents Are Saying</h1>
+  <p>Real families. Honest feedback. Proven development.</p>
+</header>
+
+<main>
+
+  <!-- ANDREA -->
+  <div class="testimonial-card">
+    <div class="stars">★★★★★</div>
+    <p>
+      “I have had two daughters train with Jude. I personally saw more skill
+      advancement training with him in weeks than I saw from their club soccer
+      coach that entire season. His training schedule was flexible and dependable;
+      great for our homeschool schedule and he always made training fun and
+      rewarding for the girls. We will definitely be back for training in the
+      off season and in preparation for tryouts again.”
+    </p>
+    <span>— Andrea D.</span>
+  </div>
+
+  <!-- NICOLE -->
+  <div class="testimonial-card">
+    <div class="stars">★★★★★</div>
+    <p>
+      “Jude 10/10! Super great with my daughter. Adapted the drills based on her
+      skill level and needs. He also made it super fun too.”
+    </p>
+    <span>— Nicole C.</span>
+  </div>
+
+  <!-- KAREN -->
+  <div class="testimonial-card">
+    <div class="stars">★★★★★</div>
+    <p>
+      “I highly recommend Jude as a coach. My son would come home after every
+      session with a new bit of knowledge towards his game. Taking his potential
+      to a whole new level which eventually led my son to a Europe Super Draft.
+      Jude is patient, motivating, and very knowledgeable. He took the time to
+      explain, correct, and push so that he could reach his full potential.
+      We are very thankful for his support and training. Excellent program!”
+    </p>
+    <span>— Karen G.</span>
+  </div>
+
+  <div class="cta">
+    <h2>Ready to Train With Purpose?</h2>
+    <p>Structured sessions. Clear feedback. Measurable progress.</p>
+    <a href="training.html" class="btn">View Training Programs</a>
+
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Motion Mastery Soccer Academy</p>
+</footer>
+
+</body>
+</html>
