@@ -19,18 +19,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Motion Mastery Soccer Academy</title>
 
-<!-- Favicons -->
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
-<!-- iOS -->
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-<!-- PWA / Android -->
-<link rel="manifest" href="site.webmanifest">
-
-
+  <!-- Favicon -->
+  <link rel="icon" href="badge.png" type="image/png">
 
   <!-- SEO Meta -->
   <meta name="description" content="Motion Mastery Academy - Elite youth soccer training focused on technique, movement efficiency, and results-driven development.">
@@ -46,6 +36,59 @@
 
   <style>
 
+/* Global Button Styling for homepage CTAs */
+.home-btn {
+  background: #b30000;
+  color: white;
+  border: 2px solid black;
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 12px auto;
+  display: inline-block;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.home-btn:hover {
+  background: black;
+  color: #ff2a2a;
+  border-color: #b30000;
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+    
+.philosophy-toggle {
+  background: #b30000;
+  color: white;
+  border: 2px solid black;
+  padding: 12px 26px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 18px auto 10px;
+  display: inline-block;
+  transition: all 0.25s ease;
+}
+
+.philosophy-toggle:hover {
+  background: black;
+  color: #ff2a2a;
+  border-color: #b30000;
+  transform: scale(1.05);
+}
+
+.philosophy-content {
+  display: none;
+  max-width: 720px;
+  margin: 30px auto 0;
+}
+
+    
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -241,97 +284,71 @@ section, div[id] {
       border-top: 3px solid #b30000;
       font-size: 14px;
     }
-    /* TOP NAV */
-    .top-nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid rgba(179, 0, 0, 0.6);
-      padding: 10px 0;
-      display: flex;
-      justify-content: center;
-      gap: 28px;
-    }
-
-    .top-nav a {
-      color: #d0d0d0;
-      text-decoration: none;
-      font-size: 14px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      position: relative;
-      padding: 6px 2px;
-      transition: color 0.25s ease;
-    }
-
-    .top-nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 0;
-      height: 2px;
-      background: #b30000;
-      transition: width 0.25s ease;
-    }
-
-    .top-nav a:hover {
-      color: #ffffff;
-    }
-
-    .top-nav a:hover::after {
-      width: 100%;
-    }
-
-/* Fix section scroll position on mobile */
-@media screen and (max-width: 768px) {
-  section {
-    scroll-margin-top: 70px; /* adjust for mobile nav height */
-  }
+    
+/* SECTION DIVIDER */
+.section-divider {
+  width: 100%;
+  max-width: 900px;
+  height: 2px;
+  background: #b30000;
+  margin: 70px auto 60px;
+  border-radius: 2px;
+}
+   /* =================== TOP NAV (GLOBAL STANDARD) =================== */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(179, 0, 0, 0.6);
 }
 
-@media screen and (max-width: 768px) {
-  .top-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #0b0b0b; /* matches header */
-  }
+.top-nav a {
+  color: #d0d0d0;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 6px 2px;
+  transition: color 0.25s ease;
 }
 
+.top-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #b30000;
+  transition: width 0.25s ease;
+}
+
+.top-nav a:hover {
+  color: #ffffff;
+}
+
+.top-nav a:hover::after {
+  width: 100%;
+}
+
+/* Mobile */
 @media screen and (max-width: 480px) {
   .top-nav {
-    padding: 8px 0; /* shrink nav vertically */
-  }
-
-  .top-nav a {
-    font-size: 12px; /* smaller font for buttons */
-    padding: 6px 8px; /* less spacing around each button */
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-@media screen and (max-width: 480px) {
-  /* Make top nav wrap if buttons don't fit */
-  .top-nav {
-    display: flex;
-    flex-wrap: wrap;  /* allows buttons to go to next line */
-    justify-content: center;  /* center align */
+    flex-wrap: wrap;
     padding: 8px 0;
-    background-color: #0b0b0b; /* ensures nav is visible */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
   }
 
   .top-nav a {
-    font-size: 12px;       /* smaller text for mobile */
-    padding: 6px 10px;     /* smaller padding */
-    margin: 2px;            /* small spacing between buttons */
+    font-size: 12px;
+    padding: 6px 10px;
+    margin: 2px;
   }
 }
 
@@ -390,15 +407,32 @@ html {
 
   </style>
 </head>
+  
+<script>
+function togglePhilosophy() {
+  const content = document.querySelector(".philosophy-content");
+  const btn = document.querySelector(".philosophy-toggle");
 
+  if (content.style.display === "block") {
+    content.style.display = "none";
+    btn.textContent = "Read Our Philosophy";
+  } else {
+    content.style.display = "block";
+    btn.textContent = "Hide Philosophy";
+  }
+}
+</script>
+
+  
 <body>
 
 <nav class="top-nav">
-  <a href="#philosophy">Philosophy</a>
-  <a href="#homeschool">Homeschool</a>
-  <a href="#pricing">Training</a>
-  <a href="#clinics">Clinics</a>
+  <a href="index.html">Home</a>
+  <a href="training.html">Training</a>
+  <a href="testimonials.html">Testimonials</a>
 </nav>
+
+
 
 
 <header>
@@ -417,7 +451,12 @@ html {
   <div class="philosophy" id="philosophy">
 
     <h2>Our Philosophy</h2>
+    
+<button class="philosophy-toggle" onclick="togglePhilosophy()">
+  Read Our Philosophy
+</button>
 
+    <div class="philosophy-content">
     <p>
       Across every level of the game, from grassroots soccer to the highest youth standards, the same development pattern appears again and again: improvement through sheer volume. More reps. More sessions. More hours. This approach is widely accepted, and while it can work, it often requires far more time than necessary to produce meaningful progress.
     </p>
@@ -448,6 +487,7 @@ html {
       This is the foundation of Motion Mastery Academy.<br><br>
       — Jude Odell, Founder
     </p>
+      </div>
   </div>
 
 <!-- HOMESCHOOL -->
@@ -465,60 +505,44 @@ html {
 
 </div>
 
+  <div class="section-divider"></div>
 
-<!-- MINIMALIST PRICING SECTION – FINAL -->
-<div class="pricing-section" id="pricing">
-  <h2>Training Programs</h2>
+<div class="training-section" style="margin-top:50px; padding:40px; background: linear-gradient(145deg, #1a0a0a, #2b0000); border: 2px solid #b30000; border-radius:12px; max-width:900px; margin-left:auto; margin-right:auto;">
+  <h2>⚽ Training Built for Real Development ⚽</h2>
 
-  <div class="pricing-grid">
-    <!-- SOLO PACKAGES -->
-    <div class="price-card">
-      <h3>One-on-One Program</h3>
-      <ul style="padding-left:0; list-style:none; line-height:1.8;">
-        <li>3-Session: $150 total | $50/session</li>
-        <li>5-Session: $225 total | $45/session</li>
-        <li>8-Session: $340 total | $42.50/session</li>
-        <li>10-Session: $400 total | $40/session</li>
-      </ul>
-    </div>
+  <p style="font-size:17px; line-height:1.7;">
+    Motion Mastery offers structured private training and clinics
+    designed to improve technique, confidence, and execution
+    in real game situations.
+  </p>
 
-    <!-- 2-PLAYER PACKAGES -->
-    <div class="price-card">
-      <h3>Semi-Private Program (2 Players)</h3>
-      <ul style="padding-left:0; list-style:none; line-height:1.8;">
-        <li>3-Session: $240 total | $40/session per player</li>
-        <li>5-Session: $360 total | $36/session per player</li>
-        <li>8-Session: $544 total | $34/session per player</li>
-        <li>10-Session: $640 total | $32/session per player</li>
-      </ul>
-    </div>
-  </div>
+  <a href="training.html" class="home-btn">View Training Programs</a>
+
+  </a>
 </div>
 
-  <!-- PRIVATE TRAINING BUTTON -->
-  <div style="margin-top:50px;">
-    <a
-      href="https://docs.google.com/forms/d/1bLQdMSfD1vNv1mFrJyQw4PBv66g4ArOKwQLSz3_Wkp8/edit"
-      target="_blank"
-      class="btn">
-      Private Training Registration
-    </a>
+
+<div class="reviews-section" style="margin-top:50px; padding:40px; background:#1a0a0a; border:2px solid #b30000; border-radius:12px; max-width:900px; margin-left:auto; margin-right:auto; text-align:center;">
+  <h2>Trusted by Parents. Proven by Results.</h2>
+
+  <!-- Star rating like Google Maps -->
+  <div class="star-rating" style="margin:15px 0; font-size:28px; color:#FFD700;">
+    ★★★★★
   </div>
 
-  <!-- CLINIC -->
-  <div class="clinic" id="clinics">
+  <p style="font-size:16px; line-height:1.6; max-width:700px; margin:0 auto 20px;">
+    Families consistently report rapid improvement in technique, confidence, and game performance — often within just a few sessions.
+  </p>
 
-    <h2>Upcoming Clinics</h2>
-    <div class="clinic-card">
-      <h3>Gilbert Clinic</h3>
-      <p>
-        High-intensity 3-day clinic focused on shooting, ball mastery,
-        and competitive play.
-      </p>
-      <p><strong>$20 per day • $50 full clinic</strong></p>
-    </div>
-  </div>
+<a href="testimonials.html" class="home-btn">Read Parent Reviews</a>
 
+  </a>
+</div>
+
+
+
+
+  
   <div class="contact">
     <p>Email: motionmastery2025@gmail.com</p>
     <p>Phone: 480-688-4134</p>
@@ -589,3 +613,18 @@ if ("serviceWorker" in navigator) {
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
