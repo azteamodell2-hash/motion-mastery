@@ -224,15 +224,23 @@ footer {
   color: #ccc;
 }
 
-/* Responsive */
-@media screen and (max-width: 768px) {
-  .hero h1 { font-size: 36px; }
-}
-
 @media screen and (max-width: 480px) {
   .shop-card img { width: 140px; height: 140px; }
   .shop-intro { padding: 30px 15px; }
+
+  /* MOBILE TOP NAV FIX - MATCH TESTIMONIAL PAGE */
+  .top-nav {
+    flex-wrap: wrap;
+    padding: 8px 0;
+  }
+
+  .top-nav a {
+    font-size: 12px;
+    padding: 6px 10px;
+    margin: 2px;
+  }
 }
+
 
 </style>
 </head>
