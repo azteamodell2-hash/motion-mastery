@@ -1,300 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motion Mastery Academy Shop</title>
+<link rel="icon" href="badge.png" type="image/png">
 
-  <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#b30000">
-<meta name="apple-mobile-web-app-capable" content="yes">
+<style>
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CNCRSBPV0Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CNCRSBPV0Z');
-</script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Motion Mastery Soccer Academy</title>
-
-  <!-- Favicon -->
-  <link rel="icon" href="badge.png" type="image/png">
-
-  <!-- SEO Meta -->
-  <meta name="description" content="Motion Mastery Academy - Elite youth soccer training focused on technique, movement efficiency, and results-driven development.">
-  <meta name="keywords" content="soccer, youth soccer, soccer academy, training, Motion Mastery Academy, technique, results">
-  <meta name="author" content="Jude Odell, Motion Mastery Academy">
-
-  <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="Motion Mastery Academy">
-  <meta property="og:description" content="Elite youth soccer training focused on technique, movement efficiency, and results-driven development.">
-  <meta property="og:image" content="badge.png">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://azteamodell2.github.io/motion-mastery/">
-
-  <style>
-
-/* Global Button Styling for homepage CTAs */
-.home-btn {
-  background: #b30000;
-  color: white;
-  border: 2px solid black;
-  padding: 14px 32px;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 6px;
-  cursor: pointer;
-  margin: 12px auto;
-  display: inline-block;
-  transition: all 0.25s ease;
-  text-decoration: none;
+/* ================= GLOBAL ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.home-btn:hover {
-  background: black;
-  color: #ff2a2a;
-  border-color: #b30000;
-  transform: scale(1.05);
-  text-decoration: none;
+body {
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: #f2f2f2;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-    
-.philosophy-toggle {
-  background: #b30000;
-  color: white;
-  border: 2px solid black;
-  padding: 12px 26px;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 6px;
-  cursor: pointer;
-  margin: 18px auto 10px;
-  display: inline-block;
-  transition: all 0.25s ease;
-}
-
-.philosophy-toggle:hover {
-  background: black;
-  color: #ff2a2a;
-  border-color: #b30000;
-  transform: scale(1.05);
-}
-
-.philosophy-content {
-  display: none;
-  max-width: 720px;
-  margin: 30px auto 0;
-}
-
-    
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #0b0b0b 0%, #1f0000 100%);
-      color: #f2f2f2;
-      text-align: center;
-    }
-/* NAV OFFSET FIX */
-section, div[id] {
-  scroll-margin-top: 90px;
-}
-
-
-    /* HERO */
-    header {
-      background:
-        linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
-        radial-gradient(circle at top, rgba(179,0,0,0.4), transparent 70%);
-      padding: 60px 20px 50px;
-      border-bottom: 3px solid #b30000;
-    }
-
-    .badge {
-      width: 420px;
-      max-width: 90%;
-      height: auto;
-      margin-bottom: 20px;
-    }
-
-    header h1 {
-      margin: 10px 0 0;
-      font-size: 38px;
-      letter-spacing: 1px;
-    }
-
-    main {
-      padding: 50px 20px;
-    }
-
-    h2 {
-      color: #ff2a2a;
-      margin-bottom: 15px;
-    }
-
-    p {
-      max-width: 700px;
-      margin: 0 auto 25px;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    /* BUTTON */
-    .btn {
-      display: inline-block;
-      padding: 16px 34px;
-      background-color: #b30000;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 6px;
-      border: 2px solid black;
-      transition: all 0.25s ease;
-      margin: 10px;
-    }
-
-    .btn:hover {
-      background-color: black;
-      color: #ff2a2a;
-      border-color: #b30000;
-      transform: scale(1.05);
-    }
-
-    /* PHILOSOPHY */
-    .philosophy {
-      margin-top: 70px;
-      padding-top: 40px;
-      border-top: 2px solid #b30000;
-    }
-
-    .signature {
-      margin-top: 35px;
-      font-size: 15px;
-      opacity: 0.9;
-    }
-
-    /* PRICING */
-    .pricing-section {
-      margin-top: 70px;
-      border-top: 2px solid #b30000;
-      padding-top: 40px;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .price-card {
-      background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
-      border: 2px solid #b30000;
-      border-radius: 12px;
-      padding: 25px;
-      text-align: left;
-      box-shadow: 0 6px 15px rgba(179, 0, 0, 0.4);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .price-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 25px rgba(179, 0, 0, 0.6);
-    }
-
-    .price-card h3 {
-      color: #ff2a2a;
-      margin-bottom: 10px;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .price-card ul {
-      list-style: none;
-      padding: 0;
-      font-size: 15px;
-    }
-
-    .price-card li {
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    /* CLINIC */
-    .clinic {
-      margin-top: 70px;
-      padding-top: 30px;
-      border-top: 2px solid #b30000;
-    }
-
-    .clinic-card {
-      max-width: 420px;
-      margin: 25px auto;
-      padding: 25px;
-      background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
-      border: 2px solid #b30000;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(179, 0, 0, 0.4);
-    }
-
-    .clinic-card h3 {
-      color: #ff2a2a;
-    }
-
-    /* CONTACT */
-    .contact {
-      margin-top: 60px;
-      font-size: 15px;
-    }
-
-    .social {
-      margin-top: 15px;
-    }
-
-    .social a {
-      color: #ff2a2a;
-      font-weight: bold;
-      text-decoration: none;
-    }
-.reviews {
-  margin-top: 15px;
-  font-size: 15px;
-}
-
-.reviews a {
-  color: #ff2a2a;
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.25s ease;
-}
-
-.reviews a:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-
-    footer {
-      background-color: black;
-      padding: 20px;
-      margin-top: 60px;
-      border-top: 3px solid #b30000;
-      font-size: 14px;
-    }
-    
-/* SECTION DIVIDER */
-.section-divider {
-  width: 100%;
-  max-width: 900px;
-  height: 2px;
-  background: #b30000;
-  margin: 70px auto 60px;
-  border-radius: 2px;
-}
-   /* =================== TOP NAV (GLOBAL STANDARD) =================== */
+/* =================== TOP NAV (MATCHES HOMEPAGE) =================== */
 .top-nav {
   position: sticky;
   top: 0;
@@ -338,7 +67,7 @@ section, div[id] {
   width: 100%;
 }
 
-/* Mobile */
+/* Mobile Nav */
 @media screen and (max-width: 480px) {
   .top-nav {
     flex-wrap: wrap;
@@ -352,265 +81,222 @@ section, div[id] {
   }
 }
 
-/* APP INSTALL BAR */
-#appBar {
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  background: linear-gradient(90deg, #0b0b0b, #1f0000);
-  border-top: 2px solid #b30000;
-  padding: 12px 10px;
-  z-index: 999;
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  padding: 120px 20px 80px;
+  text-align: center;
+  background:
+    radial-gradient(circle at top left, rgba(255,42,42,0.15), transparent 70%),
+    linear-gradient(180deg, #1a0000 0%, #0b0b0b 100%);
 }
 
-.app-bar-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.app-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 8px;
-}
-
-.app-text {
-  text-align: left;
-  flex: 1;
-  font-size: 14px;
-}
-
-.app-text span {
-  display: block;
-  font-size: 12px;
-  opacity: 0.8;
-}
-
-.app-install-btn {
-  background: #b30000;
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.app-install-btn:hover {
-  background: black;
+.hero h1 {
+  font-size: 48px;
   color: #ff2a2a;
+  margin-bottom: 18px;
+  text-shadow: 0 0 20px rgba(255,42,42,0.5);
 }
 
-  </style>
+.hero p {
+  font-size: 20px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.hero .badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 95px;
+  border-radius: 10px;
+  border: 3px solid #b30000;
+  box-shadow: 0 6px 22px rgba(255,42,42,0.4);
+}
+
+/* ================= SHOP INTRO ================= */
+.shop-intro {
+  max-width: 900px;
+  margin: 60px auto 40px;
+  padding: 50px;
+  background: linear-gradient(145deg, #1b1b1b, #0f0f0f);
+  border-radius: 18px;
+  border: 2px solid #b30000;
+  box-shadow: 0 10px 25px rgba(255,42,42,0.2);
+  text-align: center;
+}
+
+.shop-intro h2 {
+  font-size: 34px;
+  color: #ff2a2a;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.shop-intro p {
+  font-size: 17px;
+  color: #ddd;
+  margin-bottom: 14px;
+}
+
+.shop-disclaimer {
+  font-size: 14px;
+  color: #aaa;
+  font-style: italic;
+}
+
+/* ================= SHOP GRID ================= */
+.shop-grid {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+}
+
+.shop-card {
+  background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
+  border-radius: 20px;
+  padding: 30px 20px 40px;
+  text-align: center;
+  border: 2px solid #b30000;
+  box-shadow: 0 12px 28px rgba(255,42,42,0.4);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shop-card:hover {
+  border-color: #ff2a2a;
+  box-shadow: 0 14px 34px rgba(255,42,42,0.6);
+}
+
+/* Product Images */
+.shop-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.15);
+}
+
+/* Titles */
+.shop-card h3 {
+  font-size: 22px;
+  color: #ff2a2a;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(255,42,42,0.5);
+}
+
+.shop-card p {
+  font-size: 15px;
+  color: #ddd;
+  margin-bottom: 25px;
+  min-height: 60px;
+}
+
+/* ================= BUTTONS ================= */
+.shop-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #b30000, #ff2a2a);
+  box-shadow: 0 6px 16px rgba(255,42,42,0.4);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+}
+
+/* Nicer hover — darker, not black */
+.shop-btn.active:hover {
+  background: linear-gradient(135deg, #7a0000, #c40000);
+  box-shadow: 0 8px 22px rgba(255,42,42,0.55);
+  text-decoration: none;
+}
+
+/* Coming Soon */
+.shop-btn.coming-soon {
+  background: #555;
+  cursor: not-allowed;
+  color: #ccc;
+  box-shadow: none;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: #0b0b0b;
+  border-top: 3px solid #b30000;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .hero h1 { font-size: 36px; }
+}
+
+@media screen and (max-width: 480px) {
+  .shop-card img { width: 140px; height: 140px; }
+  .shop-intro { padding: 30px 15px; }
+}
+
+</style>
 </head>
-  
-<script>
-function togglePhilosophy() {
-  const content = document.querySelector(".philosophy-content");
-  const btn = document.querySelector(".philosophy-toggle");
 
-  if (content.style.display === "block") {
-    content.style.display = "none";
-    btn.textContent = "Read Our Philosophy";
-  } else {
-    content.style.display = "block";
-    btn.textContent = "Hide Philosophy";
-  }
-}
-</script>
-
-  
 <body>
 
 <nav class="top-nav">
   <a href="index.html">Home</a>
   <a href="training.html">Training</a>
   <a href="testimonials.html">Testimonials</a>
+  <a href="shop.html">Shop</a>
 </nav>
 
+<section class="hero">
+  <img src="badge.png" alt="Motion Mastery Badge" class="badge">
+  <h1>Motion Mastery Academy Shop</h1>
+  <p>Elite training gear trusted in-session and built for serious development.</p>
+</section>
 
-
-
-<header>
-  <img src="badge.png" alt="Motion Mastery Soccer Academy Badge" class="badge">
-  <h1>Motion Mastery Soccer Academy</h1>
-</header>
-
-<main>
-  <h2>Elite Soccer Training</h2>
-  <p>
-    Personalized training designed to accelerate results, sharpen technique,
-    and translate skills directly into game performance.
+<div class="shop-intro">
+  <h2>Elevate Your Training</h2>
+  <p>Every product reflects the same performance standard demanded inside Motion Mastery Academy sessions.</p>
+  <p class="shop-disclaimer">
+    Products are sourced from trusted suppliers and actively used by Motion Mastery Academy athletes.
   </p>
-
-  <!-- PHILOSOPHY -->
-  <div class="philosophy" id="philosophy">
-
-    <h2>Our Philosophy</h2>
-    
-<button class="philosophy-toggle" onclick="togglePhilosophy()">
-  Read Our Philosophy
-</button>
-
-    <div class="philosophy-content">
-    <p>
-      Across every level of the game, from grassroots soccer to the highest youth standards, the same development pattern appears again and again: improvement through sheer volume. More reps. More sessions. More hours. This approach is widely accepted, and while it can work, it often requires far more time than necessary to produce meaningful progress.
-    </p>
-
-    <p>I followed that path myself.</p>
-
-    <p>
-      Over the course of my playing career, I accumulated well over 2,000 hours of shooting practice. For much of that time, improvement came slowly and inconsistently—not because of a lack of effort, but because repetition came before understanding. It wasn’t until the final phase of my development that I began to truly study technique, body mechanics, and movement efficiency. In that relatively short period, my consistency and execution improved exponentially.
-    </p>
-
-    <p>
-      That experience reshaped how I view training.
-    </p>
-
-    <p>
-      Certain aspects of the game, particularly ball mastery and comfort in possession, naturally demand time and repetition. While training methods can be optimized, there are no real shortcuts to developing feel, creativity, and confidence on the ball. Those qualities are earned through consistent exposure and experience.
-    </p>
-
-    <p>
-      Kicking mechanics, however, are different. Shooting and weak-foot development are highly technical movements where efficiency matters. Without proper structure, repetition alone becomes inefficient, and small mechanical flaws compound over thousands of reps. When players first understand how their body moves, how force is generated, and how technique influences outcome, repetition finally becomes productive instead of wasteful.
-    </p>
-
-    <p>
-      At Motion Mastery, the focus is on doing the work up front. Proper mechanics are built consciously before they are repeated endlessly. From there, training shifts toward turning correct movement into muscle memory and embedding it into the subconscious. When players train with awareness first and volume second, progress accelerates. Time is saved. Confidence grows. And every rep has intent.
-    </p>
-
-    <p class="signature">
-      This is the foundation of Motion Mastery Academy.<br><br>
-      — Jude Odell, Founder
-    </p>
-      </div>
-  </div>
-
-<!-- HOMESCHOOL -->
-<div class="philosophy" id="homeschool">
-  <h2>Homeschool-Friendly Training</h2>
-
-  <p>
-  Motion Mastery Academy provides itemized receipts for training sessions upon request.
-  Families may submit receipts directly to their ESA or scholarship program for potential reimbursement.
-</p>
-
-<p>
-  Reimbursement is handled by the family and their ESA or scholarship provider.
-</p>
-
 </div>
 
-  <div class="section-divider"></div>
+<main class="shop-grid">
 
-<div class="training-section" style="margin-top:50px; padding:40px; background:#1a0a0a; border:2px solid #b30000; border-radius:12px; max-width:900px; margin-left:auto; margin-right:auto; text-align:center;">
-
-  <h2>⚽ Training Built for Real Development ⚽</h2>
-
-  <p style="font-size:17px; line-height:1.7;">
-    Motion Mastery offers structured private training and clinics
-    designed to improve technique, confidence, and execution
-    in real game situations.
-  </p>
-
-  <a href="training.html" class="home-btn">View Training Programs</a>
-
-  </a>
-</div>
-
-
-<div class="reviews-section" style="margin-top:50px; padding:40px; background:#1a0a0a; border:2px solid #b30000; border-radius:12px; max-width:900px; margin-left:auto; margin-right:auto; text-align:center;">
-  <h2>Trusted by Parents. Proven by Results.</h2>
-
-  <!-- Star rating like Google Maps -->
-  <div class="star-rating" style="margin:15px 0; font-size:28px; color:#FFD700;">
-    ★★★★★
-  </div>
-
-  <p style="font-size:16px; line-height:1.6; max-width:700px; margin:0 auto 20px;">
-    Families consistently report rapid improvement in technique, confidence, and game performance — often within just a few sessions.
-  </p>
-
-<a href="testimonials.html" class="home-btn">Read Parent Reviews</a>
-
-  </a>
-</div>
-
-
-
-
-  
-  <div class="contact">
-    <p>Email: motionmastery2025@gmail.com</p>
-    <p>Phone: 480-688-4134</p>
-  </div>
-
-  <div class="social">
-    <p>
-      Follow on Instagram:
-      <a href="https://www.instagram.com/motion_mastery_academy/?hl=en" target="_blank">
-        @motion_mastery_academy
-      </a>
-    </p>
-  </div>
-<div class="reviews">
-  <p>
-    Enjoyed training with us?
-    <a href="https://g.page/r/CXuVubA5rKGcEBM/review" target="_blank">
-      Leave a Google Review
+  <!-- AGILITY LADDER -->
+  <div class="shop-card">
+    <img src="agility-ladder.png" alt="Agility Ladder">
+    <h3>Pro Agility Ladder</h3>
+    <p>Designed to improve foot speed, coordination, and explosive movement patterns.</p>
+    <a href="https://www.paypal.com/ncp/payment/6X83BDFGZENYE" target="_blank" class="shop-btn active">
+      Buy Now
     </a>
-  </p>
-</div>
+  </div>
+
+  <!-- JERSEY -->
+  <div class="shop-card">
+    <img src="jersey.png" alt="Training Jersey">
+    <h3>Training Jersey</h3>
+    <p>Performance-fit jersey worn during Motion Mastery Academy training sessions.</p>
+    <button class="shop-btn coming-soon">Coming Soon</button>
+  </div>
 
 </main>
 
 <footer>
-  <p>&copy; 2025 Motion Mastery Soccer Academy</p>
-<!-- APP INSTALL BAR -->
-<div id="appBar">
-  <div class="app-bar-content">
-    <img src="badge.png" alt="App Icon" class="app-icon">
-    <div class="app-text">
-      <strong>Motion Mastery App</strong>
-      <span>Train faster. Access anytime.</span>
-    </div>
-    <button id="installBtn" class="app-install-btn">
-      Get App
-    </button>
-  </div>
-</div>
-
+  &copy; 2025 Motion Mastery Soccer Academy
 </footer>
-
- <script>
-let deferredPrompt;
-const installBtn = document.getElementById("installBtn");
-
-window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-});
-
-installBtn.addEventListener("click", async () => {
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    deferredPrompt = null;
-  } else {
-    alert(
-      "To install on iPhone:\n\n1. Tap the Share icon\n2. Select 'Add to Home Screen'"
-    );
-  }
-});
-
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
-}
-</script>
-
 
 </body>
 </html>
