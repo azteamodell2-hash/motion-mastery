@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motion Mastery Academy Shop</title>
+<link rel="icon" href="badge.png" type="image/png">
+
+<style>
+
+/* ================= GLOBAL ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: #f2f2f2;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ================= TOP NAV ================= */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(179, 0, 0, 0.6);
+}
+
+.top-nav a {
+  color: #d0d0d0;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 6px 2px;
+  transition: color 0.25s ease;
+}
+
+.top-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #b30000;
+  transition: width 0.25s ease;
+}
+
+.top-nav a:hover {
+  color: #ffffff;
+}
+
+.top-nav a:hover::after {
+  width: 100%;
+}
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  padding: 120px 20px 80px;
+  text-align: center;
+  background:
+    radial-gradient(circle at top left, rgba(255,42,42,0.15), transparent 70%),
+    linear-gradient(180deg, #1a0000 0%, #0b0b0b 100%);
+}
+
+.hero h1 {
+  font-size: 48px;
+  color: #ff2a2a;
+  margin-bottom: 18px;
+  text-shadow: 0 0 20px rgba(255,42,42,0.5);
+}
+
+.hero p {
+  font-size: 20px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.hero .badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 95px;
+  border-radius: 10px;
+  border: 3px solid #b30000;
+  box-shadow: 0 6px 22px rgba(255,42,42,0.4);
+  transform: rotate(0deg);
+}
+
+/* ================= SHOP INTRO ================= */
+.shop-intro {
+  max-width: 900px;
+  margin: 60px auto 40px;
+  padding: 50px;
+  background: linear-gradient(145deg, #1b1b1b, #0f0f0f);
+  border-radius: 18px;
+  border: 2px solid #b30000;
+  box-shadow: 0 10px 25px rgba(255,42,42,0.2);
+  text-align: center;
+}
+
+.shop-intro h2 {
+  font-size: 34px;
+  color: #ff2a2a;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.shop-intro p {
+  font-size: 17px;
+  color: #ddd;
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+
+/* Smaller secondary line (same formatting as earlier versions) */
+.shop-intro .shop-disclaimer {
+  font-size: 14px;
+  color: #aaa;
+  font-style: italic;
+}
+
+/* ================= SHOP GRID ================= */
+.shop-grid {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+}
+
+.shop-card {
+  background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
+  border-radius: 20px;
+  padding: 30px 20px 40px;
+  text-align: center;
+  border: 2px solid #b30000;
+  box-shadow: 0 12px 28px rgba(255,42,42,0.4);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shop-card:hover {
+  border-color: #ff2a2a;
+  box-shadow: 0 14px 34px rgba(255,42,42,0.6);
+}
+
+/* Product Images */
+.shop-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.15);
+}
+
+/* Titles */
+.shop-card h3 {
+  font-size: 22px;
+  color: #ff2a2a;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(255,42,42,0.5);
+}
+
+.shop-card p {
+  font-size: 15px;
+  color: #ddd;
+  margin-bottom: 25px;
+  min-height: 60px;
+}
+
+/* ================= BUTTONS ================= */
+.shop-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #b30000, #ff2a2a);
+  box-shadow: 0 6px 16px rgba(255,42,42,0.4);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+}
+
+/* Darker hover, not black */
+.shop-btn.active:hover {
+  background: linear-gradient(135deg, #7a0000, #c40000);
+  box-shadow: 0 8px 22px rgba(255,42,42,0.55);
+}
+
+/* Coming Soon */
+.shop-btn.coming-soon {
+  background: #555;
+  cursor: not-allowed;
+  color: #ccc;
+  box-shadow: none;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: #0b0b0b;
+  border-top: 3px solid #b30000;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .hero h1 { font-size: 36px; }
+}
+
+@media screen and (max-width: 480px) {
+  .shop-card img { width: 140px; height: 140px; }
+  .shop-intro { padding: 30px 15px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="top-nav">
+  <a href="index.html">Home</a>
+  <a href="training.html">Training</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="shop.html">Shop</a>
+</nav>
+
+<section class="hero">
+  <img src="badge.png" alt="Motion Mastery Badge" class="badge">
+  <h1>Motion Mastery Academy Shop</h1>
+  <p>Elite training gear trusted in-session and built for serious development.</p>
+</section>
+
+<div class="shop-intro">
+  <h2>Elevate Your Training</h2>
+  <p>
+    Every product offered here meets the same standard we demand in our own sessions — durable, purpose-driven, and engineered to support high-performance training environments.
+  </p>
+  <p class="shop-disclaimer">
+    Products are sourced from trusted suppliers and actively used by Motion Mastery Academy athletes.
+  </p>
+</div>
+
+<main class="shop-grid">
+
+  <div class="shop-card">
+    <img src="agility-ladder.png" alt="Agility Ladder">
+    <h3>Pro Agility Ladder</h3>
+    <p>Designed to improve foot speed, coordination, and explosive movement patterns.</p>
+    <a href="https://www.paypal.com/ncp/payment/6X83BDFGZENYE" target="_blank" class="shop-btn active">
+      Buy Now
+    </a>
+  </div>
+
+  <div class="shop-card">
+    <img src="jersey.png" alt="Training Jersey">
+    <h3>Training Jersey</h3>
+    <p>Performance-fit jersey worn during Motion Mastery Academy training sessions.</p>
+    <button class="shop-btn coming-soon">Coming Soon</button>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 2025 Motion Mastery Soccer Academy
+</footer>
+
+</body>
+</html>
