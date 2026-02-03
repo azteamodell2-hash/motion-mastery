@@ -27,18 +27,149 @@ gtag('config', 'G-CNCRSBPV0Z');
 <meta property="og:image" content="badge.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://azteamodell2.github.io/motion-mastery/">
+
+
+
+
 <style>
+
+/* ===== Professional Styled Training Section ===== */
+.training-section-pro {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 45px 40px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #0e0e0e, #121212); /* subtle gradient for depth */
+  border: 1px solid rgba(255, 42, 42, 0.3); /* faint red accent outline */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35), inset 0 1px 3px rgba(255,255,255,0.05); /* soft depth and inner glow */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.training-section-pro:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(0,0,0,0.45), inset 0 1px 3px rgba(255,255,255,0.05);
+}
+
+.training-section-pro h2 {
+  color: #ff2a2a;
+  font-size: 34px;
+  margin-bottom: 22px;
+  letter-spacing: 0.5px;
+}
+
+.training-section-pro p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #f2f2f2;
+  max-width: 820px;
+  margin: 0 auto 28px;
+}
+
+
+/* ===== Modern Interactive Testimonial ===== */
+#testimonialQuote {
+  max-width: 700px;
+  margin: 30px auto 40px;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #f2f2f2;
+  background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+  padding: 30px 35px;
+  border-radius: 12px;
+  border-left: 5px solid #ff2a2a;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+  text-align: left;
+
+  /* NEW: Fixed height & vertical centering */
+  min-height: 180px; /* adjust based on your tallest quote */
+  display: flex;
+  align-items: center;
+}
+
+/* Big quotation marks */
+#testimonialQuote::before {
+  content: "“";
+  font-size: 40px;
+  color: #ff2a2a;
+  position: absolute;
+  top: -10px;
+  left: 20px;
+}
+
+#testimonialQuote::after {
+  content: "”";
+  font-size: 40px;
+  color: #ff2a2a;
+  position: absolute;
+  bottom: -10px;
+  right: 20px;
+}
+
+/* Fade-in active state */
+#testimonialQuote.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover effect */
+#testimonialQuote:hover {
+  box-shadow: 0 15px 35px rgba(255,42,42,0.4);
+  transform: translateY(-3px);
+  transition: all 0.4s ease;
+}
+
+
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 /* Global Button Styling for homepage CTAs */
 .home-btn { background: #b30000; color: white; border: 2px solid black; padding: 14px 32px; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer; margin: 12px auto; display: inline-block; transition: all 0.25s ease; text-decoration: none; }
 .home-btn:hover { background: black; color: #ff2a2a; border-color: #b30000; transform: scale(1.05); text-decoration: none; }
 .philosophy-toggle { background: #b30000; color: white; border: 2px solid black; padding: 12px 26px; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer; margin: 18px auto 10px; display: inline-block; transition: all 0.25s ease; }
 .philosophy-toggle:hover { background: black; color: #ff2a2a; border-color: #b30000; transform: scale(1.05); }
 .philosophy-content { display: none; max-width: 720px; margin: 30px auto 0; }
-body { margin: 0; font-family: Arial, sans-serif; background: linear-gradient(180deg, #0b0b0b 0%, #1f0000 100%); color: #f2f2f2; text-align: center; }
+
+
+body { margin: 0; font-family: Arial, sans-serif; background: linear-gradient(180deg, #0b0b0b 0%, #0b0b0b 100%);
+ color: #f2f2f2; text-align: center; }
+
+
 /* NAV OFFSET FIX */
 section, div[id] { scroll-margin-top: 90px; }
-/* HERO */
-header { background: linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0.95)), radial-gradient(circle at top, rgba(179,0,0,0.4), transparent 70%); padding: 60px 20px 50px; border-bottom: 3px solid #b30000; }
+
+
+
+header {
+  padding: 70px 20px 60px;
+  background:
+    radial-gradient(circle at top, rgba(179,0,0,0.4), transparent 70%),
+    linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,1));
+  border-bottom: 3px solid #b30000;
+}
+.badge {
+  width: 420px;
+  max-width: 90%;
+  margin-bottom: 20px;
+  transition: transform 0.1s ease-out;
+}
+
+
+
 .badge { width: 420px; max-width: 90%; height: auto; margin-bottom: 20px; }
 header h1 { margin: 10px 0 0; font-size: 38px; letter-spacing: 1px; }
 main { padding: 50px 20px; }
@@ -117,9 +248,11 @@ btn.textContent = "Hide Philosophy";
 
   
 <header>
-<img src="badge.png" alt="Motion Mastery Soccer Academy Badge" class="badge">
-<h1>Motion Mastery Soccer Academy</h1>
+  <img src="badge.png" class="badge" id="badge">
+  <h1>Motion Mastery Soccer Academy</h1>
 </header>
+
+
 <main>
 <h2>Elite Soccer Training</h2>
 <p> Personalized training designed to accelerate results, sharpen technique, and translate skills directly into game performance. </p>
@@ -145,18 +278,24 @@ btn.textContent = "Hide Philosophy";
 <p> Reimbursement is handled by the family and their ESA or scholarship provider. </p>
 </div>
 <div class="section-divider"></div>
-<div class="training-section" style="margin-top:50px; padding:40px; background:#1a0a0a; border:2px solid #b30000; border-radius:12px; max-width:900px; margin-left:auto; margin-right:auto; text-align:center;">
-<h2>⚽ Training Built for Real Development ⚽</h2>
-<p style="font-size:17px; line-height:1.7;"> Motion Mastery offers structured private training and clinics designed to improve technique, confidence, and execution in real game situations. </p>
-<a href="training.html" class="home-btn">View Training Programs</a>
+
+
+<div class="training-section-pro">
+  <h2>Training Built for Real Development</h2>
+  <p>
+    Motion Mastery offers structured private training and clinics designed to improve technique, confidence, and execution in real game situations. Every session is crafted to accelerate results while keeping training engaging and purposeful.
+  </p>
+  <a href="training.html" class="home-btn">View Training Programs</a>
 </div>
-<div class="reviews-section" style="margin-top:50px; padding:40px; background:#1a0a0a; border:2px solid #b30000; border-radius:12px; max-width:900px; margin-left:auto; margin-right:auto; text-align:center;">
-<h2>Trusted by Parents. Proven by Results.</h2>
-<!-- Star rating like Google Maps -->
-<div class="star-rating" style="margin:15px 0; font-size:28px; color:#FFD700;"> ★★★★★ </div>
-<p style="font-size:16px; line-height:1.6; max-width:700px; margin:0 auto 20px;"> Families consistently report rapid improvement in technique, confidence, and game performance — often within just a few sessions. </p>
-<a href="testimonials.html" class="home-btn">Read Parent Reviews</a>
-</div>
+
+
+<section class="reveal">
+  <h2>What Parents Are Saying</h2>
+  <div class="quote-box" id="testimonialQuote"></div>
+  <a href="testimonials.html" class="home-btn">Read All Testimonials</a>
+</section>
+
+
 <div class="contact">
 <p>Email: motionmastery2025@gmail.com</p>
 <p>Phone: 480-688-4134</p>
@@ -200,6 +339,47 @@ alert(
 }
 });
 if ("serviceWorker" in navigator) { navigator.serviceWorker.register("service-worker.js"); }
+
+/* Badge parallax */
+const badge = document.getElementById("badge");
+window.addEventListener("mousemove", e => {
+  badge.style.transform = `translate(${e.clientX/140}px, ${e.clientY/140}px)`;
+});
+
+/* Scroll reveal */
+document.querySelectorAll(".reveal").forEach(el => {
+  new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) el.classList.add("visible");
+  }).observe(el);
+});
+
+
+/* Modern Testimonials Rotation with Fade */
+const testimonialQuote = document.getElementById("testimonialQuote");
+const quotes = [
+  "I have had two daughters train with Jude. I personally saw more skill advancement training with him in weeks than I saw from their club soccer coach that entire season. His training schedule was flexible and dependable; great for our homeschool schedule and he always made training fun and rewarding for the girls. We will definitely be back for training in the off season and in preparation for tryouts again.",
+  "Jude 10/10! Super great with my daughter. Adapted the drills based on her skill level and needs. He also made it super fun too.",
+  "I highly recommend Jude as a coach. My son would come home after every session with a new bit of knowledge towards his game. Taking his potential to a whole new level which eventually led my son to a Europe Super Draft. Jude is patient, motivating, and very knowledgeable. He took the time to explain, correct, and push so that he could reach his full potential. We are very thankful for his support and training. Excellent program!"
+];
+
+let q = 0;
+
+function showTestimonial() {
+  testimonialQuote.classList.remove("visible"); // fade out
+  setTimeout(() => {
+    testimonialQuote.textContent = quotes[q++ % quotes.length]; // change text
+    testimonialQuote.classList.add("visible"); // fade in
+  }, 500); // matches CSS transition
+}
+
+// Initial display
+showTestimonial();
+
+// Rotate every 6 seconds
+setInterval(showTestimonial, 6000);
+
+
+
 </script>
 </body>
 </html>
