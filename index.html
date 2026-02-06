@@ -51,6 +51,11 @@ gtag('config', 'G-CNCRSBPV0Z');
   box-shadow: 0 12px 22px rgba(0,0,0,0.45), inset 0 1px 3px rgba(255,255,255,0.05);
 }
 
+.reveal.visible:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+
+
 .training-section-pro h2 {
   color: #ff2a2a;
   font-size: 34px;
@@ -126,15 +131,25 @@ gtag('config', 'G-CNCRSBPV0Z');
 
 
 
+/* ===== Premium Scroll Reveal ===== */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
+  transform: translateY(60px) scale(0.96);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
 }
+
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
+
+/* Stagger timing */
+.reveal.delay-1 { transition-delay: 0.15s; }
+.reveal.delay-2 { transition-delay: 0.3s; }
+.reveal.delay-3 { transition-delay: 0.45s; }
 
 
 /* Global Button Styling for homepage CTAs */
@@ -257,7 +272,8 @@ btn.textContent = "Hide Philosophy";
 <h2>Elite Soccer Training</h2>
 <p> Personalized training designed to accelerate results, sharpen technique, and translate skills directly into game performance. </p>
 <!-- PHILOSOPHY -->
-<div class="philosophy" id="philosophy">
+<div class="philosophy reveal delay-1" id="philosophy">
+
 <h2>Our Philosophy</h2>
 <button class="philosophy-toggle" onclick="togglePhilosophy()"> Read Our Philosophy </button>
 <div class="philosophy-content">
@@ -280,7 +296,8 @@ btn.textContent = "Hide Philosophy";
 <div class="section-divider"></div>
 
 
-<div class="training-section-pro">
+<div class="training-section-pro reveal delay-2">
+
   <h2>Training Built for Real Development</h2>
   <p>
     Motion Mastery offers structured private training and clinics designed to improve technique, confidence, and execution in real game situations. Every session is crafted to accelerate results while keeping training engaging and purposeful.
@@ -289,7 +306,8 @@ btn.textContent = "Hide Philosophy";
 </div>
 
 
-<section class="reveal">
+<section class="reveal delay-1">
+
   <h2>What Parents Are Saying</h2>
   <div class="quote-box" id="testimonialQuote"></div>
   <a href="testimonials.html" class="home-btn">Read All Testimonials</a>
@@ -346,12 +364,26 @@ window.addEventListener("mousemove", e => {
   badge.style.transform = `translate(${e.clientX/140}px, ${e.clientY/140}px)`;
 });
 
-/* Scroll reveal */
+/* ===== Premium Scroll Reveal Observer ===== */
+const revealObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.15,
+    rootMargin: "0px 0px -80px 0px"
+  }
+);
+
 document.querySelectorAll(".reveal").forEach(el => {
-  new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) el.classList.add("visible");
-  }).observe(el);
+  revealObserver.observe(el);
 });
+
 
 
 /* Modern Testimonials Rotation with Fade */
