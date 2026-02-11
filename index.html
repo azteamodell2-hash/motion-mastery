@@ -193,9 +193,52 @@ p { max-width: 700px; margin: 0 auto 25px; font-size: 16px; line-height: 1.6; }
 /* BUTTON */
 .btn { display: inline-block; padding: 16px 34px; background-color: #b30000; color: white; text-decoration: none; font-weight: bold; border-radius: 6px; border: 2px solid black; transition: all 0.25s ease; margin: 10px; }
 .btn:hover { background-color: black; color: #ff2a2a; border-color: #b30000; transform: scale(1.05); }
-/* PHILOSOPHY */
-.philosophy { margin-top: 70px; padding-top: 40px; border-top: 2px solid #b30000; }
-.signature { margin-top: 35px; font-size: 15px; opacity: 0.9; }
+
+/* ===== PHILOSOPHY SECTION ===== */
+.philosophy {
+  margin-top: 70px;
+  padding-top: 40px;
+  border-top: 2px solid #b30000;
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,42,42,0.1) 0%, transparent 70%);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.philosophy-content {
+  display: none;
+  max-width: 720px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+
+.philosophy-content p {
+  color: #f2f2f2;
+  line-height: 1.75;
+  font-size: 16.5px;
+}
+
+.signature {
+  margin-top: 26px;
+  font-size: 15px;
+  opacity: 0.9;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+
+
 /* PRICING */
 .pricing-section { margin-top: 70px; border-top: 2px solid #b30000; padding-top: 40px; }
 .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto; }
@@ -245,7 +288,7 @@ const content = document.querySelector(".philosophy-content");
 const btn = document.querySelector(".philosophy-toggle");
 if (content.style.display === "block") {
 content.style.display = "none";
-btn.textContent = "Read Our Philosophy";
+btn.textContent = "Read How We Train";
 } else {
 content.style.display = "block";
 btn.textContent = "Hide Philosophy";
@@ -271,22 +314,37 @@ btn.textContent = "Hide Philosophy";
 <main>
 <h2>Elite Soccer Training</h2>
 <p> Personalized training designed to accelerate results, sharpen technique, and translate skills directly into game performance. </p>
-<!-- PHILOSOPHY -->
-<div class="philosophy reveal delay-1" id="philosophy">
 
-<h2>Our Philosophy</h2>
-<button class="philosophy-toggle" onclick="togglePhilosophy()"> Read Our Philosophy </button>
-<div class="philosophy-content">
-<p> Across every level of the game, from grassroots soccer to the highest youth standards, the same development pattern appears again and again: improvement through sheer volume. More reps. More sessions. More hours. This approach is widely accepted, and while it can work, it often requires far more time than necessary to produce meaningful progress. </p>
-<p>I followed that path myself.</p>
-<p> Over the course of my playing career, I accumulated well over 2,000 hours of shooting practice. For much of that time, improvement came slowly and inconsistently—not because of a lack of effort, but because repetition came before understanding. It wasn’t until the final phase of my development that I began to truly study technique, body mechanics, and movement efficiency. In that relatively short period, my consistency and execution improved exponentially. </p>
-<p> That experience reshaped how I view training. </p>
-<p> Certain aspects of the game, particularly ball mastery and comfort in possession, naturally demand time and repetition. While training methods can be optimized, there are no real shortcuts to developing feel, creativity, and confidence on the ball. Those qualities are earned through consistent exposure and experience. </p>
-<p> Kicking mechanics, however, are different. Shooting and weak-foot development are highly technical movements where efficiency matters. Without proper structure, repetition alone becomes inefficient, and small mechanical flaws compound over thousands of reps. When players first understand how their body moves, how force is generated, and how technique influences outcome, repetition finally becomes productive instead of wasteful. </p>
-<p> At Motion Mastery, the focus is on doing the work up front. Proper mechanics are built consciously before they are repeated endlessly. From there, training shifts toward turning correct movement into muscle memory and embedding it into the subconscious. When players train with awareness first and volume second, progress accelerates. Time is saved. Confidence grows. And every rep has intent. </p>
-<p class="signature"> This is the foundation of Motion Mastery Academy.<br><br> — Jude Odell, Founder </p>
+<!-- PHILOSOPHY -->
+
+<div class="philosophy reveal delay-1" id="philosophy">
+  <h2>Why We’re Different</h2>
+  <button class="philosophy-toggle" onclick="togglePhilosophy()">Read How We Train</button>
+
+  <div class="philosophy-content">
+    <p>
+      Most programs focus on volume before technique: more reps, more sessions, more hours.
+      At Motion Mastery, we flip the script. Mechanics come first. Players learn how their body moves,
+      how to generate force efficiently, and how technique drives results.
+    </p>
+
+    <p>
+      Once movements are mastered, we layer in purposeful repetitions. Every rep is intentional,
+      precise, and designed to build muscle memory quickly. Skills are then applied in game-like
+      scenarios so development translates directly to performance.
+    </p>
+
+    <p>
+      This method accelerates progress, saves time, and builds confidence. Weak-foot development,
+      shooting mechanics, and ball mastery are taught with precision. At Motion Mastery, training isn’t
+      just hard — it's smart, structured, and results-driven.
+    </p>
+
+    <p class="signature">— Jude Odell, Founder</p>
+  </div>
 </div>
-</div>
+
+
 <!-- HOMESCHOOL -->
 <div class="philosophy" id="homeschool">
 <h2>Homeschool-Friendly Training</h2>
