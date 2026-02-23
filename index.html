@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#b30000">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -391,6 +400,7 @@ footer { background-color: black; padding: 20px; margin-top: 60px; border-top: 3
 
 
 </style>
+
 </head>
 <script>
 function togglePhilosophy() {
@@ -463,6 +473,30 @@ btn.textContent = "Hide Philosophy";
 </div>
 <div class="section-divider"></div>
 
+<!-- ===== SERVICE AREA & TRAINING LOCATIONS ===== -->
+<div class="training-section-pro reveal delay-2">
+
+  <h2>Serving East Valley Families</h2>
+  <p>
+    Motion Mastery proudly provides elite private and small-group soccer training
+    throughout the East Valley. Sessions are hosted at high-quality public facilities
+    selected for safety, space, and training quality.
+  </p>
+
+  <button class="home-btn" onclick="toggleLocations()">View Training Locations</button>
+
+  <div id="locationMapWrap" style="display:none; margin-top:30px;">
+
+    <p style="font-size:14px; opacity:0.85; margin-bottom:15px;">
+      Training locations vary by session size and availability. Exact field details are
+      provided after booking.
+    </p>
+
+    <div id="trainingMap" style="width:100%; height:380px; border-radius:14px; border:2px solid rgba(255,42,42,0.4); box-shadow:0 8px 20px rgba(0,0,0,0.45);"></div>
+
+  </div>
+
+</div>
 
 <div class="training-section-pro reveal delay-2">
 
@@ -622,8 +656,80 @@ showTestimonial();
 // Rotate every 6 seconds
 setInterval(showTestimonial, 6000);
 
+/* ===== LOCATION MAP TOGGLE ===== */
+let mapLoaded = false;
+
+function toggleLocations() {
+  const wrap = document.getElementById("locationMapWrap");
+
+  if (wrap.style.display === "none") {
+    wrap.style.display = "block";
+
+    if (!mapLoaded) {
+      initTrainingMap();
+      mapLoaded = true;
+    }
+  } else {
+    wrap.style.display = "none";
+  }
+}
+
+/* ===== LEAFLET MAP INIT ===== */
+function initTrainingMap() {
+
+  const map = L.map('trainingMap').setView([33.2765, -111.7045], 11);
+
+   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  // City + road labels overlay (for clarity)
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png', {
+    subdomains: 'abcd',
+    maxZoom: 19,
+    pane: 'overlayPane'
+  }).addTo(map);
+
+const locations = [
+  {
+    name: "Desert Sky Park",
+    coords: [33.29859, -111.69099],
+    text: "Camps, Clinics & Group Training",
+    googleLink: "https://www.google.com/maps/search/6624+S+Power+Rd,+Mesa,+AZ+85212"
+  },
+  {
+    name: "Power Ranch Soccer Fields",
+    coords: [33.2700, -111.6953],
+    text: "Private 1-on-1 to 1-on-6 Training",
+    googleLink: "https://www.google.com/maps/search/78C4+G2,+Gilbert,+Arizona"
+  },
+  {
+    name: "Gilbert Regional Park",
+    coords: [33.261094, -111.721744],
+    text: "Futsal & Specialty Sessions",
+    googleLink: "https://www.google.com/maps/search/774G+WGR,+Gilbert,+AZ+85298"
+  }
+];
+
+locations.forEach(loc => {
+  const googleLink = `https://www.google.com/maps/search/?api=1&query=${loc.coords[0]},${loc.coords[1]}`;
+
+  L.marker(loc.coords)
+    .addTo(map)
+    .bindPopup(`
+      <strong>${loc.name}</strong><br>
+      ${loc.text}<br><br>
+      <a href="${googleLink}" target="_blank"
+         style="display:inline-block;padding:8px 12px;border-radius:6px;
+         background:#b30000;color:white;text-decoration:none;
+         font-weight:bold;border:1px solid black;">
+         Open in Google Maps →
+      </a>
+    `);
+});
 
 
-</script>
+}</script>
 </body>
 </html>
